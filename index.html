@@ -409,7 +409,6 @@
     </div>
 
     <script>
-        // ✨ FIXED PWA LOGIC (No blob error)
         let deferredPrompt;
         window.addEventListener('beforeinstallprompt', (e) => {
             e.preventDefault();
@@ -443,7 +442,7 @@
 
         const i18n = {
             en: { tabs: ["🍿 Movies", "📺 TV Shows", "🎭 K-Dramas", "❤️ My List"], search: "Search titles...", sort: ["🔥 Popular", "🚀 Upcoming Movies/Shows", "🎬 New Releases", "✨ Latest Releases", "👁️ Most Viewed", "🏆 Top Rated"], filters: ["All Categories", "All Languages", "All Countries"], hero: ["Play Trailer", "More Info"], loadBtn: "Load More ⬇️", settings: ["Account Details", "App Language", "Playback (Autoplay Trailer)", "Parental Controls (18+)", "Downloads / Offline", "Help & Support", "Sign Out", "Premium User", "Ultra Plan Active", "Install App to Home Screen"] },
-            hi: { tabs: ["🍿 फिल्में", "📺 टीवी শো", "🎭 के-ड्रामा", "❤️ मेरी सूची"], search: "खोजें...", sort: ["🔥 लोकप्रिय", "🚀 आने वाली फ़िल्में/शो", "🎬 नई रिलीज़", "✨ नवीनतम रिलीज़", "👁️ सबसे ज्यादा देखे गए", "🏆 टॉप रेटेड"], filters: ["सभी श्रेणियाँ", "सभी भाषाएँ", "सभी देश"], hero: ["ट्रेलर देखें", "अधिक जानकारी"], loadBtn: "और लोड करें ⬇️", settings: ["खाता विवरण", "ऐप की भाषा", "प्लेबैक (ऑटोप्ले)", "अभिभावक नियंत्रण (18+)", "डाउनलोड / ऑफ़लाइन", "मदद और समर्थन", "साइन आउट करें", "प्रीमियम उपयोगकर्ता", "अल्ट्रा प्लान सक्रिय", "होम स्क्रीन पर ऐप इंस्टॉल करें"] }
+            hi: { tabs: ["🍿 फिल्में", "📺 टीवी शो", "🎭 के-ड्रामा", "❤️ मेरी सूची"], search: "खोजें...", sort: ["🔥 लोकप्रिय", "🚀 आने वाली फ़िल्में/शो", "🎬 नई रिलीज़", "✨ नवीनतम रिलीज़", "👁️ सबसे ज्यादा देखे गए", "🏆 टॉप रेटेड"], filters: ["सभी श्रेणियाँ", "सभी भाषाएँ", "सभी देश"], hero: ["ट्रेलर देखें", "अधिक जानकारी"], loadBtn: "और लोड करें ⬇️", settings: ["खाता विवरण", "ऐप की भाषा", "प्लेबैक (ऑटोप्ले)", "अभिभावक नियंत्रण (18+)", "डाउनलोड / ऑफ़लाइन", "मदद और समर्थन", "साइन आउट करें", "प्रीमियम उपयोगकर्ता", "अल्ट्रा प्लान सक्रिय", "होम स्क्रीन पर ऐप इंस्टॉल करें"] }
         };
 
         const TMDB_LANG_CODE = { en: "en-US", hi: "hi-IN", es: "es-ES", ko: "ko-KR", ja: "ja-JP", fr: "fr-FR" };
@@ -842,7 +841,9 @@
             }
         } 
 
-        function openSettings() { document.getElementById("settings-popup").style.display = "flex"; }
+        function openSettings() { 
+            document.getElementById("settings-popup").style.display = "flex"; 
+        }
         function closeSettings() { 
             document.getElementById("settings-popup").style.display = "none"; 
             if(document.getElementById('nav-profile').classList.contains('active')) {
